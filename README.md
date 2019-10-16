@@ -12,7 +12,7 @@
 [![pull requests closed](https://img.shields.io/github/issues-pr-closed/xuliangzhan/vxe-table.svg)](https://github.com/xuliangzhan/vxe-table/pulls?q=is%3Apr+is%3Aclosed)
 [![npm license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/xuliangzhan/vxe-table/blob/master/LICENSE)
 
-一个简单实用的 Vue 表组件，与任意组件库兼容
+一个简单实用的 Vue 表格组件，与任意组件库兼容
 
 * 设计理念
   * 面向现代浏览器（简洁、高效的 API 设计）
@@ -41,7 +41,7 @@
 * [x] Table with border （带边框）
 * [x] Cell style （单元格样式）
 * [x] Column resizable （列宽拖动）
-* [x] Fluid-height table with fixed header （流体高度）
+* [x] Maximum table height （最大高度）
 * [x] Resize height and width （响应式宽高）
 * [x] Table with fixed header （固定表头）
 * [x] Table with fixed column （固定列）

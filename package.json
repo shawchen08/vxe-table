@@ -1,7 +1,7 @@
 {
   "name": "vxe-table",
-  "version": "2.6.0-beta.16",
-  "description": "一个简单实用的 Vue 表组件",
+  "version": "2.6.0-beta.18",
+  "description": "一个简单实用的 Vue 表格组件",
   "scripts": {
     "serve": "vue-cli-service serve",
     "lint": "vue-cli-service lint",
@@ -78,7 +78,7 @@
     "xe-ajax": "^3.8.1",
     "xe-ajax-mock": "^1.9.2",
     "xe-clipboard": "^1.7.1",
-    "xe-utils": "^2.2.10",
+    "xe-utils": "^2.2.11",
     "xlsx": "^0.14.3"
   },
   "peerDependencies": {
