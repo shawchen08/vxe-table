@@ -1421,15 +1421,18 @@ const Methods = {
       tableFullData = tableFullData.concat(insertList)
     }
     if (!checkStrictly) {
+      this.isAllCheckboxDisabled = typeof checkMethod === 'function' && !!tableFullData.length && tableFullData.every(
+        (row, rowIndex) => !checkMethod({ row, rowIndex })
+      )
       if (property) {
-        this.isAllSelected = tableFullData.length && tableFullData.every(
+        this.isAllSelected = !this.isAllCheckboxDisabled && tableFullData.length && tableFullData.every(
           checkMethod
             ? (row, rowIndex) => !checkMethod({ row, rowIndex }) || XEUtils.get(row, property)
             : row => XEUtils.get(row, property)
         )
         this.isIndeterminate = !this.isAllSelected && tableFullData.some(row => XEUtils.get(row, property) || treeIndeterminates.indexOf(row) > -1)
       } else {
-        this.isAllSelected = tableFullData.length && tableFullData.every(
+        this.isAllSelected = !this.isAllCheckboxDisabled && tableFullData.length && tableFullData.every(
           checkMethod
             ? (row, rowIndex) => !checkMethod({ row, rowIndex }) || selection.indexOf(row) > -1
             : row => selection.indexOf(row) > -1

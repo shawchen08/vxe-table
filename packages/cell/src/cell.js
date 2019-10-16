@@ -223,8 +223,9 @@ export const Cell = {
     }
     if (!isHidden) {
       options.domProps = {
-        checked: $table.isAllSelected
+        checked: $table.isAllCheckboxDisabled ? false : $table.isAllSelected
       }
+      options.attrs.disabled = $table.isAllCheckboxDisabled
       options.on = {
         change (evnt) {
           $table.triggerCheckAllEvent(evnt, evnt.target.checked)
@@ -235,7 +236,8 @@ export const Cell = {
       h('label', {
         class: ['vxe-checkbox', {
           [`size--${vSize}`]: vSize,
-          'is--indeterminate': $table.isIndeterminate
+          'is--indeterminate': $table.isIndeterminate,
+          'is--disabled': $table.isAllCheckboxDisabled
         }]
       }, [
         h('input', options),

@@ -219,6 +219,8 @@ export default {
       isAllSelected: false,
       // 多选属性，有选中且非全选状态
       isIndeterminate: false,
+      // 复选框是否都被禁用
+      isAllCheckboxDisabled: false,
       // 多选属性，已选中的列
       selection: [],
       // 当前行
