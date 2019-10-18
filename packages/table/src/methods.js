@@ -2224,44 +2224,19 @@ const Methods = {
       visibleIndex: 0
     })
     this.$nextTick(() => {
-      // let tableBody = this.$refs.tableBody
-      // let tableBodyElem = tableBody ? tableBody.$el : null
-      // let tableFooter = this.$refs.tableFooter
-      // let tableFooterElem = tableFooter ? tableFooter.$el : null
-      // if (tableBodyElem) {
-      //   tableBodyElem.scrollTop = 0
-      //   tableBodyElem.scrollLeft = 0
-      // }
-      // if (tableFooterElem) {
-      //   tableFooterElem.scrollLeft = 0
-      // }
-      this.setScrollByComponentName('tableBody', { scrollTop: 0, scrollLeft: 0 })
-      this.setScrollByComponentName('tableFooter', { scrollLeft: 0 })
-      this.setScrollByComponentName('tableHeader', { scrollLeft: 0 })
-      this.setScrollByComponentName('rightBody', { scrollTop: 0 })
-      this.setScrollByComponentName('leftBody', { scrollTop: 0 })
+      let tableBody = this.$refs.tableBody
+      let tableBodyElem = tableBody ? tableBody.$el : null
+      let tableFooter = this.$refs.tableFooter
+      let tableFooterElem = tableFooter ? tableFooter.$el : null
+      if (tableBodyElem) {
+        tableBodyElem.scrollTop = 0
+        tableBodyElem.scrollLeft = 0
+      }
+      if (tableFooterElem) {
+        tableFooterElem.scrollLeft = 0
+      }
     })
     return this.$nextTick()
-  },
-  /**
-   * 设置表格指定块的滚动条位置
-   * @param {String} componentName 设置哪一块的滚动条位置
-   * @param {Number} scrollTop     纵向滚动条位置，不传则不改
-   * @param {Number} scrollLeft    横向向滚动条位置，不传则不改
-   */
-  setScrollByComponentName (componentName, { scrollTop, scrollLeft } = {}) {
-    const scrollComponent = this.$refs[componentName]
-    const scrollElem = scrollComponent ? scrollComponent.$el : null
-
-    if (!scrollElem) {
-      return
-    }
-    if (XEUtils.isNumber(scrollTop)) {
-      scrollElem.scrollTop = scrollTop
-    }
-    if (XEUtils.isNumber(scrollLeft)) {
-      scrollElem.scrollLeft = scrollLeft
-    }
   },
   /**
    * 更新表尾合计
